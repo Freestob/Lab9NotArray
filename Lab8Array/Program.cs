@@ -37,10 +37,15 @@ namespace Lab8Array
             int userInput = int.Parse(Console.ReadLine());
             int i = userInput - 1;
             var student = _classmates[i];
-            Console.WriteLine("This is " + student[0]);
-            Console.WriteLine("Would you like to know more about their hometown or talents? If yes please select type hometown or talents.");
+            Console.WriteLine($"This is {student[0]}");
+            Console.WriteLine("Would you like to know more about their hometown, talents, or boardgames? If yes please select type (hometown), (talents), or boardgames).");
             var userChoice = Console.ReadLine();
             Console.ReadKey();
+
+            if(userChoice == "hometown")
+            {
+
+            }
 
 
             /*if (userChoice == "hometown")
