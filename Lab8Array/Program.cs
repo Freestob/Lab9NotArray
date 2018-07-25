@@ -4,32 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using static System.Console;
 
 
 namespace Lab8Array
 {
     class Program
     {
-        private static List <string> _classmates;
-        private static string[] _hometown;
-        private static string [] _talents;
+        
+         
         static void Main(string[] args)
         {
+            List<List<string>> _classmates = new List<List<string>>()
+            {
+            new List<string>() { "Billy Bob Thorton","Washington DC"," Chewing bubblegum", "Settlers of Catan"},
+            new List<string>() { "Lester Neigard", "Grand Rapids", "Taking names", "Monopoly" },
+            new List<string>() { "Peggy Valone", "Portland", "cashing checks", "Betrayal at the House on the Hill" },
+            new List<string>() { "Steve Wizouski", "Chicago", "hopschotch", "Above and Below" },
+            new List<string>() { "Mike Sullivan", "Marquette", "armed robery", "Life" },
+            new List<string>() { "Alvin Collins", "the South Side","throwing rocks at trains", "Dungeons and Dragons" },
+            new List<string>() { "Charlie Humpkins", "the North Pole", "absolutely nothing", "Near and Far" },
+            new List<string>() { "Delta Flyer", "Whoville", "running", "Monster Hunter" },
+            new List<string>() { "Eugine Elward", "where you're from", "looting", "Mary Me Mister Darcy" },
+            new List<string>() { "Frank Lloyde-Wright", "Holland", "arsen", "7 Wonders" },
+        };
+           
             
-            _classmates[0] = "Billy Bob Thorton";
-            _classmates[1] = "Lester Neigard";
-            _classmates[2] = "Peggy Valone";
-            _classmates[3] = "Steve Wizouski";
-            _classmates[4] = "Mike Sullivan";
-            _classmates[5] = "Alvin Collins";
-            _classmates[6] = "Charlie Humpkins";
-            _classmates[7] = "Delta Flyer";
-            _classmates[8] = "Eugine Elward";
-            _classmates[9] = "Frank Lloyde-Wright";
-        
-
-            _hometown = new string[] { "Washington DC", "Grand Rapids", "Portland", "Chicago", "Marquette", "the South Side", "the North Pole", "Whoville", "where you're from", "Holland" };
-            _talents = new string[] { "chewing bublegum", "taking names", "chashing checks", "hopscotch", "armed robery", "playing hooky","throwing rocks at trains","absolutely nothing","running", "looting"};
 
             Console.WriteLine("As the new teacher in school it is wise to learn up on who you'll be teaching.");
             Console.WriteLine("Which student do you want to learn about? Enter a number 1-20");
