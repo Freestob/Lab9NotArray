@@ -38,14 +38,28 @@ namespace Lab8Array
             int i = userInput - 1;
             var student = _classmates[i];
             Console.WriteLine($"This is {student[0]}");
-            Console.WriteLine("Would you like to know more about their hometown, talents, or boardgames? If yes please select type (hometown), (talents), or boardgames).");
+            Console.WriteLine("Would you like to know more about their hometown, talents, or boardgames? If yes please select type (hometown), (talents), or (boardgames).");
             var userChoice = Console.ReadLine();
             Console.ReadKey();
 
-            if(userChoice == "hometown")
+            if (userChoice == "hometown")
             {
-
+                Console.WriteLine($"{student[0]} is from {student[1]}");
+                Console.ReadKey();
             }
+            else if (userChoice == "talents")
+            {
+                Console.WriteLine($"{student[0]} is good at {student[2]}");
+            }
+            else if (userChoice == "boardgames")
+            {
+                Console.WriteLine($"{student[0]} likes to play {student[3]}");
+            }
+            else
+            {
+                Console.WriteLine($"That is not a valid input. That seems like something that {student[8]} would do.");
+            }
+
 
 
             /*if (userChoice == "hometown")
