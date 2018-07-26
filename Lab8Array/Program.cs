@@ -36,31 +36,29 @@ namespace Lab8Array
             if (Console.ReadLine() == "learn")
             {
                 int userEntry = ValidateUserEntry();
-                Console.WriteLine("Which student would you like to learn about? Enter a number between 1-10");
-                int userInput = int.Parse(Console.ReadLine());
-                int i = userInput - 1;
-                var student = classmates[i];
-                Console.WriteLine($"This is {student[0]}");
+                int validatedUserEntry = --userEntry;
+
+                Console.WriteLine($"You have selected {studentNames[validatedUserEntry]}.");
                 Console.WriteLine("Would you like to know more about their hometown, talents, or boardgames? If yes please select type (hometown), (talents), or (boardgames).");
                 var userChoice = Console.ReadLine();
                 Console.ReadKey();
 
                 if (userChoice == "hometown")
                 {
-                    Console.WriteLine($"{student[0]} is from {student[1]}");
+                    Console.WriteLine($"{studentNames[validatedUserEntry]} is from {studentCities[validatedUserEntry]}");
                     Console.ReadKey();
                 }
                 else if (userChoice == "talents")
                 {
-                    Console.WriteLine($"{student[0]} is good at {student[2]}");
+                    Console.WriteLine($"{studentNames[validatedUserEntry]} is good at {studentTalents[validatedUserEntry]}");
                 }
                 else if (userChoice == "boardgames")
                 {
-                    Console.WriteLine($"{student[0]} likes to play {student[3]}");
+                    Console.WriteLine($"{studentNames[validatedUserEntry]} likes to play {studentGames[validatedUserEntry]}");
                 }
                 else
                 {
-                    Console.WriteLine($"That is not a valid input. That seems like something that {student[8]} would do.");
+                    Console.WriteLine($"That is not a valid input. That seems like something that {studentNames[8]} would do.");
                 }
             }
             else if(Console.ReadLine()=="add")
@@ -71,7 +69,9 @@ namespace Lab8Array
 
         private static int ValidateUserEntry()
         {
+            Console.WriteLine("Which student would you like to learn about? Enter a number between 1-10");
             int userInput = Convert.ToInt32(Console.ReadLine());
+
             try
             {
                 if (userInput > 0 && userInput < 10)
