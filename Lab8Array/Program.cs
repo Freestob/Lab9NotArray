@@ -32,7 +32,8 @@ namespace Lab8Array
             do
             {
                 Console.WriteLine("Would you like to learn about a student or add a student? (learn) (add)");
-                if (Console.ReadLine() == "learn")
+                var learnOrAdd = Console.ReadLine();
+                if (learnOrAdd == "learn")
                 {
                     int userEntry = ValidateUserEntry();
                     int validatedUserEntry = --userEntry;
@@ -60,16 +61,19 @@ namespace Lab8Array
                         Console.WriteLine($"That is not a valid input. That seems like something that {studentNames[8]} would do.");
                     }
                 }
-                else if (Console.ReadLine() == "add")
+                else if (learnOrAdd == "add")
                 {
-                    Console.WriteLine("What is the name of the new student?");
-                    studentNames.Add(Console.ReadLine());
-                    Console.WriteLine($"Where is {studentNames[studentNames.Count]} from?");
-                    studentCities.Add(Console.ReadLine());
-                    Console.WriteLine("That sounds pretty cool. What are they good at?");
-                    studentTalents.Add(Console.ReadLine());
-                    Console.WriteLine("Oh fun! What is their favorite boardgame?");
-                    studentGames.Add(Console.ReadLine());
+                    
+                    
+                        Console.WriteLine("What is the name of the new student?");
+                        studentNames.Add(Console.ReadLine());
+                        Console.WriteLine($"Where are they from?");
+                        studentCities.Add(Console.ReadLine());
+                        Console.WriteLine("That sounds pretty cool. What are they good at?");
+                        studentTalents.Add(Console.ReadLine());
+                        Console.WriteLine("Oh fun! What is their favorite boardgame?");
+                        studentGames.Add(Console.ReadLine());
+                    
                 }
                 repeat = DoAgain(repeat);
             } while (repeat == true);
