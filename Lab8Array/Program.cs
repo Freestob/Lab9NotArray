@@ -61,7 +61,13 @@ namespace Lab8Array
             else if(Console.ReadLine()=="add")
             {
                 Console.WriteLine("What is the name of the new student?");
-                studentInformation.Add[0] = Console.ReadLine();
+                studentNames.Add(Console.ReadLine());
+                Console.WriteLine($"Where is {studentNames[studentNames.Count]} from?");
+                studentCities.Add(Console.ReadLine());
+                Console.WriteLine("That sounds pretty cool. What are they good at?");
+                studentTalents.Add(Console.ReadLine());
+                Console.WriteLine("Oh fun! What is their favorite boardgame?");
+                studentGames.Add(Console.ReadLine());
             }
         }
 
