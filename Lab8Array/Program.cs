@@ -15,19 +15,16 @@ namespace Lab8Array
         
         static void Main(string[] args)
         {
-            List<List<string>> studentInformation = new List<List<string>>()
-            {
-                (new List<string>() {"Billy Bob Thorton", "Lester Neigard", "Peggy Valone", "Steve Wizouski", "Mike Sullivan", "Alvin Collins", "Charlie Humpkins", "Delta Flyer", "Eugine Elward", "Frank Lloyde-Wright"}),
-                (new List<string>() { "Washington DC", "Grand Rapids", "Portland", "Chicago", "Marquette", "the South Side", "the North Pole", "Whoville", "where you're from", "Holland"}),
-                (new List<string>() {"Chewing bubblegum", "Taking names","cashing checks", "hopschotch","armed robery", "throwing rocks at trains","absolutely nothing", "running","looting","arsen"}),
-                (new List<string>() {"Settlers of Catan", "Monopoly", "Betrayal at the House on the Hill", "Above and Below", "Life", "Dungeons and Dragons", "Near and Far", "Monster Hunter", "Mary Me Mister Darcy", "7 Wonders"}
+            
+            
+            List <string> studentNames = new List<string> {"Billy Bob Thorton", "Lester Neigard", "Peggy Valone", "Steve Wizouski", "Mike Sullivan", "Alvin Collins", "Charlie Humpkins", "Delta Flyer", "Eugine Elward", "Frank Lloyde-Wright"};
+            List<string> studentCities = new List<string> { "Washington DC", "Grand Rapids", "Portland", "Chicago", "Marquette", "the South Side", "the North Pole", "Whoville", "where you're from", "Holland" };
+            List<string> studentTalents = new List<string> { "Chewing bubblegum", "Taking names", "cashing checks", "hopschotch", "armed robery", "throwing rocks at trains", "absolutely nothing", "running", "looting", "arsen" };
+            List<string> studentGames = new List<string> { "Settlers of Catan", "Monopoly", "Betrayal at the House on the Hill", "Above and Below", "Life", "Dungeons and Dragons", "Near and Far", "Monster Hunter", "Mary Me Mister Darcy", "7 Wonders" };
 
-            };
+            
 
-            var studentNames = studentInformation[0];
-            var studentCities = studentInformation[1];
-            var studentTalents = studentInformation[2];
-            var studentGames = studentInformation[3];
+            
 
             Console.WriteLine("As the new teacher in school it is wise to learn up on who you'll be teaching.");
 
@@ -63,9 +60,12 @@ namespace Lab8Array
             }
             else if(Console.ReadLine()=="add")
             {
-             
+                Console.WriteLine("What is the name of the new student?");
+                studentInformation.Add[0] = Console.ReadLine();
             }
         }
+
+       
 
         private static int ValidateUserEntry()
         {
