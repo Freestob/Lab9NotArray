@@ -22,19 +22,12 @@ namespace Lab8Array
                 (new List<string>() {"Chewing bubblegum", "Taking names","cashing checks", "hopschotch","armed robery", "throwing rocks at trains","absolutely nothing", "running","looting","arsen"}),
                 (new List<string>() {"Settlers of Catan", "Monopoly", "Betrayal at the House on the Hill", "Above and Below", "Life", "Dungeons and Dragons", "Near and Far", "Monster Hunter", "Mary Me Mister Darcy", "7 Wonders"}
 
-                new List<string>() { "Billy Bob Thorton","Washington DC"," Chewing bubblegum", "Settlers of Catan"},
-            new List<string>() { "Lester Neigard", "Grand Rapids", "Taking names", "Monopoly", },
-            new List<string>() { "Peggy Valone", "Portland", "cashing checks", "Betrayal at the House on the Hill" },
-            new List<string>() { "Steve Wizouski", "Chicago", "hopschotch", "Above and Below" },
-            new List<string>() { "Mike Sullivan", "Marquette", "armed robery", "Life" },
-            new List<string>() { "Alvin Collins", "the South Side","throwing rocks at trains", "Dungeons and Dragons" },
-            new List<string>() { "Charlie Humpkins", "the North Pole", "absolutely nothing", "Near and Far" },
-            new List<string>() { "Delta Flyer", "Whoville", "running", "Monster Hunter" },
-            new List<string>() { "Eugine Elward", "where you're from", "looting", "Mary Me Mister Darcy" },
-            new List<string>() { "Frank Lloyde-Wright", "Holland", "arsen", "7 Wonders" },
             };
 
-            var studentNames = 
+            var studentNames = studentInformation[0];
+            var studentCities = studentInformation[1];
+            var studentTalents = studentInformation[2];
+            var studentGames = studentInformation[3];
 
             Console.WriteLine("As the new teacher in school it is wise to learn up on who you'll be teaching.");
 
@@ -42,6 +35,7 @@ namespace Lab8Array
             Console.WriteLine("Would you like to learn about a student or add a student? (learn) (add)");
             if (Console.ReadLine() == "learn")
             {
+                int userEntry = ValidateUserEntry();
                 Console.WriteLine("Which student would you like to learn about? Enter a number between 1-10");
                 int userInput = int.Parse(Console.ReadLine());
                 int i = userInput - 1;
@@ -75,6 +69,26 @@ namespace Lab8Array
             }
         }
 
-        
+        private static int ValidateUserEntry()
+        {
+            int userInput = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                if (userInput > 0 && userInput < 10)
+                {
+                    return userInput;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a number between 1 and 10.");
+                    return ValidateUserEntry();
+                }
+            }
+            catch  (IndexOutOfRangeException) 
+            {
+                Console.WriteLine("That is not a valid number");
+                return ValidateUserEntry();
+            }
+        }
     }
 }
