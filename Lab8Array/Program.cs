@@ -28,50 +28,67 @@ namespace Lab8Array
 
             Console.WriteLine("As the new teacher in school it is wise to learn up on who you'll be teaching.");
 
-            
-            Console.WriteLine("Would you like to learn about a student or add a student? (learn) (add)");
-            if (Console.ReadLine() == "learn")
+            bool doAgain = true;
+            do
             {
-                int userEntry = ValidateUserEntry();
-                int validatedUserEntry = --userEntry;
-
-                Console.WriteLine($"You have selected {studentNames[validatedUserEntry]}.");
-                Console.WriteLine("Would you like to know more about their hometown, talents, or boardgames? If yes please select type (hometown), (talents), or (boardgames).");
-                var userChoice = Console.ReadLine();
-                Console.ReadKey();
-
-                if (userChoice == "hometown")
+                Console.WriteLine("Would you like to learn about a student or add a student? (learn) (add)");
+                if (Console.ReadLine() == "learn")
                 {
-                    Console.WriteLine($"{studentNames[validatedUserEntry]} is from {studentCities[validatedUserEntry]}");
+                    int userEntry = ValidateUserEntry();
+                    int validatedUserEntry = --userEntry;
+
+                    Console.WriteLine($"You have selected {studentNames[validatedUserEntry]}.");
+                    Console.WriteLine("Would you like to know more about their hometown, talents, or boardgames? If yes please select type (hometown), (talents), or (boardgames).");
+                    var userChoice = Console.ReadLine();
                     Console.ReadKey();
+
+                    if (userChoice == "hometown")
+                    {
+                        Console.WriteLine($"{studentNames[validatedUserEntry]} is from {studentCities[validatedUserEntry]}");
+                        Console.ReadKey();
+                    }
+                    else if (userChoice == "talents")
+                    {
+                        Console.WriteLine($"{studentNames[validatedUserEntry]} is good at {studentTalents[validatedUserEntry]}");
+                    }
+                    else if (userChoice == "boardgames")
+                    {
+                        Console.WriteLine($"{studentNames[validatedUserEntry]} likes to play {studentGames[validatedUserEntry]}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"That is not a valid input. That seems like something that {studentNames[8]} would do.");
+                    }
                 }
-                else if (userChoice == "talents")
+                else if (Console.ReadLine() == "add")
                 {
-                    Console.WriteLine($"{studentNames[validatedUserEntry]} is good at {studentTalents[validatedUserEntry]}");
+                    Console.WriteLine("What is the name of the new student?");
+                    studentNames.Add(Console.ReadLine());
+                    Console.WriteLine($"Where is {studentNames[studentNames.Count]} from?");
+                    studentCities.Add(Console.ReadLine());
+                    Console.WriteLine("That sounds pretty cool. What are they good at?");
+                    studentTalents.Add(Console.ReadLine());
+                    Console.WriteLine("Oh fun! What is their favorite boardgame?");
+                    studentGames.Add(Console.ReadLine());
                 }
-                else if (userChoice == "boardgames")
-                {
-                    Console.WriteLine($"{studentNames[validatedUserEntry]} likes to play {studentGames[validatedUserEntry]}");
-                }
-                else
-                {
-                    Console.WriteLine($"That is not a valid input. That seems like something that {studentNames[8]} would do.");
-                }
-            }
-            else if(Console.ReadLine()=="add")
-            {
-                Console.WriteLine("What is the name of the new student?");
-                studentNames.Add(Console.ReadLine());
-                Console.WriteLine($"Where is {studentNames[studentNames.Count]} from?");
-                studentCities.Add(Console.ReadLine());
-                Console.WriteLine("That sounds pretty cool. What are they good at?");
-                studentTalents.Add(Console.ReadLine());
-                Console.WriteLine("Oh fun! What is their favorite boardgame?");
-                studentGames.Add(Console.ReadLine());
-            }
+                doAgain = DoAgain(repeat);
+            } while (doAgain == true);
         }
 
-       
+        private static bool DoAgain(bool repeat)
+        {
+            Console.WriteLine("Would you like to learn more or add another student? (y/n)");
+            var doAgain = Console.ReadLine().ToLower();
+            if (doAgain == "y")
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Thank you.");
+                return false;
+            }
+        }
 
         private static int ValidateUserEntry()
         {
