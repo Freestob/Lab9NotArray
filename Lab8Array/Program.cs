@@ -28,7 +28,7 @@ namespace Lab8Array
 
             Console.WriteLine("As the new teacher in school it is wise to learn up on who you'll be teaching.");
 
-            bool doAgain = true;
+            bool repeat= true;
             do
             {
                 Console.WriteLine("Would you like to learn about a student or add a student? (learn) (add)");
@@ -71,8 +71,8 @@ namespace Lab8Array
                     Console.WriteLine("Oh fun! What is their favorite boardgame?");
                     studentGames.Add(Console.ReadLine());
                 }
-                doAgain = DoAgain(repeat);
-            } while (doAgain == true);
+                repeat = DoAgain(repeat);
+            } while (repeat == true);
         }
 
         private static bool DoAgain(bool repeat)
